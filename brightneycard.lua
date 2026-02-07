@@ -1,3 +1,4 @@
+writefile("brightneycard.png", game:HttpGet("https://granny.anondrop.net/uploads/b22f1d2ef9ff6692/Untitled42_20260131073433.png", true))
 local p = game:GetService("Players").LocalPlayer
 local voteFrame = p.PlayerGui.ScreenGui.VoteFrame
 
