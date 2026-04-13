@@ -74,7 +74,7 @@ local function showDialogue(text, player)
 end
 local Http = game:GetService("HttpService")
 local jsonURL = "https://pastebin.com/raw/3xHYFifb"
-local raw = game:HttpGet(jsonURL)
+local raw = Http:GetAsync(jsonURL)
 local cfg = Http:JSONDecode(raw)
 
 for _, char in ipairs(cfg.characters) do
