@@ -17,7 +17,7 @@ local function showDialogue(text, player)
     local tweenInfoFade = TweenInfo.new(0.30, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
     local charInfo
     if game.PlaceId == 16552821455 then
-    charInfo = require(ReplicatedStorage.StoryScripts.CharacterInfo)
+    charInfo = require(repstorage.StoryScripts.CharacterInfo)
     end
     local frame = gui:WaitForChild("Frame")
     frame.BackgroundTransparency = 1
