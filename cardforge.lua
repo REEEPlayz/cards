@@ -402,7 +402,11 @@ local function detectanims(char, plr)
 				sb.Visible = true
 				sb.DialogueText.Text = string.split(id, "�")[2]
 				sb.ToonIcon.Image = require(game:GetService("ReplicatedStorage").TowerData[char:GetAttribute("ToonName")]).VoteIcon or require(game:GetService("ReplicatedStorage").TowerData[char:GetAttribute("SelectedCharacter")]).VoteIcon
-				sb.BackgroundColor3 = charInfo[plr:GetAttribute("SelectedCharacter")]["Color"] or Color3.fromRGB(255,255,255) --require(game:GetService("ReplicatedStorage").StoryScripts.CharacterInfo)[plr.Character:GetAttribute("SelectedCharacter")]["Color"] or Color3.fromRGB(255,255,255)
+				if game.PlaceId == 16552821455 then
+				sb.BackgroundColor3 = charInfo[plr:GetAttribute("SelectedCharacter")]["Color"] --or Color3.fromRGB(255,255,255) --require(game:GetService("ReplicatedStorage").StoryScripts.CharacterInfo)[plr.Character:GetAttribute("SelectedCharacter")]["Color"] or Color3.fromRGB(255,255,255)
+				else
+				sb.BackgroundColor3 = Color3.fromRGB(255,255,255)
+				end
 				sb.Parent = notifs.youdarealholder
 				task.delay(4.5, function() fadeout(sb) fadeout2(sb) task.wait(0.31) sb:Destroy() end)
 			else
