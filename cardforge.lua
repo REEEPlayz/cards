@@ -92,23 +92,32 @@ CardForgeRecoded.Name = "CardForgeRecoded"
 CardForgeRecoded.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 CardForgeRecoded.Parent = game.CoreGui
 
+local UIScale = Instance.new("UIScale")
+UIScale.Parent = CardForgeRecoded
+
 local Holder = Instance.new("Frame")
-Holder.Name = "Holder"
-Holder.BackgroundTransparency = 1
-Holder.AnchorPoint = Vector2.new(0.5, 0.5)
-Holder.Position = UDim2.new(0.5, 0, 0.5, 0)
 Holder.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Holder.Size = UDim2.new(0.5362831950187683, 0, 0.6640625, 0)
+Holder.AnchorPoint = Vector2.new(0.5, 0.5)
+Holder.BackgroundTransparency = 1
+Holder.Position = UDim2.new(0, 550, 0, 350)
+Holder.Name = "Holder"
+Holder.Size = UDim2.new(0, 422, 0, 234)
 Holder.BorderSizePixel = 0
 Holder.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Holder.Active = true
+Holder.Draggable = true
+Holder.ZIndex = 2
 Holder.Parent = CardForgeRecoded
 
 local Frame = Instance.new("Frame")
-Frame.Position = UDim2.new(-0.011451796628534794, 0, 0.17265625298023224, 0)
+Frame.AnchorPoint = Vector2.new(0.5, 0.5)
+Frame.Position = UDim2.new(0, 197, 0, 118)
 Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Frame.Size = UDim2.new(1.047029733657837, 0, 0.7588235139846802, 0)
+Frame.Size = UDim2.new(0, 423, 0, 245)
 Frame.BorderSizePixel = 0
 Frame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+--[[Frame.Active = true
+Frame.Draggable = true]]
 Frame.Parent = Holder
 
 local UIGradient = Instance.new("UIGradient")
@@ -124,6 +133,7 @@ UICorner.Parent = Frame
 
 local UIStroke = Instance.new("UIStroke")
 UIStroke.Color = Color3.fromRGB(157, 157, 157)
+UIStroke.Thickness = 1.2000000476837158
 UIStroke.BorderStrokePosition = Enum.BorderStrokePosition.Inner
 UIStroke.Parent = Frame
 
@@ -144,8 +154,8 @@ Title.TextColor3 = Color3.fromRGB(255, 255, 255)
 Title.BorderColor3 = Color3.fromRGB(0, 0, 0)
 Title.Text = "CardForge"
 Title.Name = "Title"
-Title.Size = UDim2.new(0.3924349844455719, 0, 0.13953489065170288, 0)
-Title.Position = UDim2.new(0.034591194242239, 0, 0, 0)
+Title.Size = UDim2.new(0, 161, 0, 24)
+Title.Position = UDim2.new(0, 14, 0, 0)
 Title.BorderSizePixel = 0
 Title.BackgroundTransparency = 1
 Title.TextXAlignment = Enum.TextXAlignment.Left
@@ -162,10 +172,11 @@ UIStroke_2.Parent = Title
 local Chat = Instance.new("Frame")
 Chat.Visible = false
 Chat.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Chat.AnchorPoint = Vector2.new(0.5, 0.5)
 Chat.BackgroundTransparency = 1
-Chat.Position = UDim2.new(3.607278742379094e-08, 0, 0, 0)
+Chat.Position = UDim2.new(0.49881798028945923, 0, 0.4979591965675354, 0)
 Chat.Name = "Chat"
-Chat.Size = UDim2.new(0.9976359605789185, 0, 1, 0)
+Chat.Size = UDim2.new(0, 411, 0, 245)
 Chat.BorderSizePixel = 0
 Chat.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 Chat.Parent = Frame
@@ -174,13 +185,133 @@ local ChatFrame = Instance.new("ScrollingFrame")
 ChatFrame.ScrollBarImageColor3 = Color3.fromRGB(0, 0, 0)
 ChatFrame.Active = true
 ChatFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ChatFrame.AnchorPoint = Vector2.new(0.5, 0.5)
 ChatFrame.BackgroundTransparency = 1
-ChatFrame.Position = UDim2.new(0.03459116816520691, 0, 0.174534872174263, 0)
+ChatFrame.Position = UDim2.new(0, 206, 0, 113)
 ChatFrame.Name = "ChatFrame"
-ChatFrame.Size = UDim2.new(0.9383886456489563, 0, 0.6589147448539734, 0)
+ChatFrame.Size = UDim2.new(0, 385, 0, 161)
 ChatFrame.BorderSizePixel = 0
 ChatFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 ChatFrame.Parent = Chat
+
+local ChatForgeNotifs = Instance.new("ScreenGui")
+ChatForgeNotifs.Name = "ChatForgeNotifs"
+ChatForgeNotifs.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+ChatForgeNotifs.IgnoreGuiInset = true
+ChatForgeNotifs.Parent = game.CoreGui
+
+local youdarealholder = Instance.new("Frame")
+youdarealholder.BorderColor3 = Color3.fromRGB(0, 0, 0)
+youdarealholder.AnchorPoint = Vector2.new(0.5,0.5)
+youdarealholder.BackgroundTransparency = 1
+youdarealholder.Position = UDim2.new(1, -85, 1, -255)
+youdarealholder.Name = "youdarealholder"
+youdarealholder.Size = UDim2.new(0, 159, 0, 512)
+youdarealholder.BorderSizePixel = 0
+youdarealholder.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+youdarealholder.Parent = ChatForgeNotifs
+
+local k = Instance.new("UIAspectRatioConstraint")
+k.AspectRatio = 1
+k.AspectType = "ScaleWithParentSize"
+k.DominantAxis = "Height"
+k.Parent = youdarealholder
+
+local UIGridLayout = Instance.new("UIGridLayout")
+UIGridLayout.VerticalAlignment = Enum.VerticalAlignment.Bottom
+UIGridLayout.SortOrder = Enum.SortOrder.LayoutOrder
+UIGridLayout.CellSize = UDim2.new(0.9879999756813049, 0, 0.1420000046491623, 0)
+UIGridLayout.Parent = youdarealholder
+
+local SpeechBubble = Instance.new("Frame")
+SpeechBubble.BorderColor3 = Color3.fromRGB(0, 0, 0)
+SpeechBubble.AnchorPoint = Vector2.new(0.5, 0.5)
+SpeechBubble.Size = UDim2.new(0.9879999160766602, 0, 0.1420000046491623, 0)
+SpeechBubble.Name = "SpeechBubble"
+SpeechBubble.Position = UDim2.new(0.5001349449157715, 0, 0.9358358979225159, 0)
+SpeechBubble.SizeConstraint = Enum.SizeConstraint.RelativeXX
+SpeechBubble.ZIndex = 2
+SpeechBubble.BorderSizePixel = 0
+SpeechBubble.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+SpeechBubble.Visible = false
+SpeechBubble.Parent = youdarealholder
+
+local UICorner = Instance.new("UICorner")
+UICorner.CornerRadius = UDim.new(0.10000000149011612, 0)
+UICorner.Parent = SpeechBubble
+
+local Background = Instance.new("ImageLabel")
+Background.ScaleType = Enum.ScaleType.Tile
+Background.ImageTransparency = 0.949999988079071
+Background.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Background.Name = "Background"
+Background.TileSize = UDim2.new(0.25, 0, 1, 0)
+Background.Image = "rbxassetid://6794283750"
+Background.BackgroundTransparency = 1
+Background.Size = UDim2.new(0, 157, 0, 71)
+Background.ZIndex = 3
+Background.BorderSizePixel = 0
+Background.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Background.Parent = SpeechBubble
+
+local UIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
+UIAspectRatioConstraint.AspectRatio = 2.2150635719299316
+UIAspectRatioConstraint.Parent = Background
+
+local UIGradient = Instance.new("UIGradient")
+UIGradient.Rotation = 90
+UIGradient.Color = ColorSequence.new{
+	ColorSequenceKeypoint.new(0, Color3.fromRGB(255, 255, 255)),
+	ColorSequenceKeypoint.new(1, Color3.fromRGB(109, 109, 109))
+}
+UIGradient.Parent = SpeechBubble
+
+local UIStroke = Instance.new("UIStroke")
+UIStroke.Thickness = 2.049999952316284
+UIStroke.BorderStrokePosition = Enum.BorderStrokePosition.Inner
+UIStroke.Parent = SpeechBubble
+
+local ToonIcon = Instance.new("ImageLabel")
+ToonIcon.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ToonIcon.Name = "ToonIcon"
+ToonIcon.Size = UDim2.new(0, 61, 0, 61)
+ToonIcon.Image = "rbxassetid://18809402809"
+ToonIcon.BackgroundTransparency = 1
+ToonIcon.Position = UDim2.new(0, -31, 0, 8)
+ToonIcon.ZIndex = 5
+ToonIcon.BorderSizePixel = 0
+ToonIcon.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ToonIcon.Parent = SpeechBubble
+
+local UIAspectRatioConstraint_1 = Instance.new("UIAspectRatioConstraint")
+UIAspectRatioConstraint_1.AspectRatio = 1.0000001192092896
+UIAspectRatioConstraint_1.Parent = ToonIcon
+
+local DialogueText = Instance.new("TextLabel")
+DialogueText.TextWrapped = true
+DialogueText.Name = "DialogueText"
+DialogueText.TextColor3 = Color3.fromRGB(255, 255, 255)
+DialogueText.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DialogueText.Text = "hi hello im teagan"
+DialogueText.FontFace = Font.new("rbxasset://fonts/families/FredokaOne.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+DialogueText.TextStrokeTransparency = 0
+DialogueText.Size = UDim2.new(0, 107, 0, 70)
+DialogueText.BorderSizePixel = 0
+DialogueText.BackgroundTransparency = 1
+DialogueText.Position = UDim2.new(0, 36, 0, 0)
+DialogueText.TextSize = 14
+DialogueText.ZIndex = 4
+DialogueText.TextScaled = true
+DialogueText.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+DialogueText.Parent = SpeechBubble
+
+local UIAspectRatioConstraint_2 = Instance.new("UIAspectRatioConstraint")
+UIAspectRatioConstraint_2.AspectRatio = 1.5277777910232544
+UIAspectRatioConstraint_2.Parent = DialogueText
+
+local UIAspectRatioConstraint_3 = Instance.new("UIAspectRatioConstraint")
+UIAspectRatioConstraint_3.AspectRatio = 2.2150635719299316
+UIAspectRatioConstraint_3.Parent = SpeechBubble
 
 local s = ChatFrame
 local Players = game:GetService("Players")
@@ -213,7 +344,7 @@ local function displaymessage(playername, message)
 		messageLabel.Text = message
 	end
 	
-	if #messageLabel.Text > 150 then
+	if #messageLabel.Text > 151 then
 		messageLabel.Text = string.sub(messageLabel.Text, 1, 150)
 	end
 	
@@ -228,9 +359,33 @@ local function displaymessage(playername, message)
 	s.CanvasSize = UDim2.new(0, 0, 0, s.CanvasSize.Y.Offset + newmessage.AbsoluteSize.Y + 45)
 	return newmessage
 end
-
+local function fadeout(d)
+	local tweenInfoFade = TweenInfo.new(0.30, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
+	for _, f in ipairs(d:GetDescendants()) do
+		if f:IsA("Frame") then
+			TweenService:Create(f, tweenInfoFade, {BackgroundTransparency = 1}):Play()
+		elseif f:IsA("TextLabel") or f:IsA("TextButton") then
+			TweenService:Create(f, tweenInfoFade, {
+                    TextTransparency = 1,
+                    TextStrokeTransparency = 1
+                }):Play()
+		elseif f:IsA("ImageLabel") then
+			TweenService:Create(f, tweenInfoFade, {BackgroundTransparency = 1, ImageTransparency = 1}):Play()
+		end
+	end
+end
+local function fadeout2(c)
+	local tweenInfoFade = TweenInfo.new(0.30, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
+	TweenService:Create(c, tweenInfoFade, {BackgroundTransparency = 1}):Play()
+end
+local notifs = game.CoreGui.ChatForgeNotifs
+local charInfo
+if game.PlaceId == 16552821455 then
+    charInfo = require(repstorage.StoryScripts.CharacterInfo)
+end
 local hooked = {}
 local function detectanims(char, plr)
+	if not char or not char:IsA("Model") then return end
 	if hooked[char] then return end
 	hooked[char] = true
 	local humanoid = char:WaitForChild("Humanoid")
@@ -243,6 +398,13 @@ local function detectanims(char, plr)
 			if string.find(id, "�") then
 				displaymessage(plr.Name .. " (using " .. string.split(id, "�")[3] .. " card)", string.split(id, "�")[2])
 				showDialogue(string.split(id, "�")[2], game.Players[plr.Name])
+				local sb = notifs.youdarealholder.SpeechBubble:Clone()
+				sb.Visible = true
+				sb.DialogueText.Text = string.split(id, "�")[2]
+				sb.ToonIcon.Image = require(game:GetService("ReplicatedStorage").TowerData[char:GetAttribute("ToonName")]).VoteIcon or require(game:GetService("ReplicatedStorage").TowerData[char:GetAttribute("SelectedCharacter")]).VoteIcon
+				sb.BackgroundColor3 = charInfo[plr:GetAttribute("SelectedCharacter")]["Color"] or Color3.fromRGB(255,255,255) --require(game:GetService("ReplicatedStorage").StoryScripts.CharacterInfo)[plr.Character:GetAttribute("SelectedCharacter")]["Color"] or Color3.fromRGB(255,255,255)
+				sb.Parent = notifs.youdarealholder
+				task.delay(4.5, function() fadeout(sb) fadeout2(sb) task.wait(0.31) sb:Destroy() end)
 			else
 				return "either no id or its not a message"
 			end
@@ -311,18 +473,20 @@ end
 monitorlocal()
 
 local Holder_1 = Instance.new("Frame")
-Holder_1.Visible = false
 Holder_1.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Holder_1.AnchorPoint = Vector2.new(0.5, 0.5)
 Holder_1.BackgroundTransparency = 1
 Holder_1.Position = UDim2.new(-0.09343434125185013, 0, 0, 0)
 Holder_1.Name = "Holder_1"
 Holder_1.Size = UDim2.new(0, 380, 0, 67)
 Holder_1.BorderSizePixel = 0
 Holder_1.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Holder_1.Visible = false
 Holder_1.Parent = ChatFrame
 
 local Frame_1 = Instance.new("Frame")
-Frame_1.Position = UDim2.new(0.02542371302843094, 0, 0.11940298229455948, 0)
+Frame_1.AnchorPoint = Vector2.new(0.5, 0.5)
+Frame_1.Position = UDim2.new(0.37279212474823, 0, 0.5223880410194397, 0)
 Frame_1.BorderColor3 = Color3.fromRGB(0, 0, 0)
 Frame_1.Size = UDim2.new(0.7263157963752747, 0, 0.9552238583564758, 0)
 Frame_1.BorderSizePixel = 0
@@ -399,25 +563,26 @@ UIStroke_5.Parent = message
 
 local UIListLayout = Instance.new("UIListLayout")
 UIListLayout.Padding = UDim.new(0, 7)
-UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Left
+UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
 UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
 UIListLayout.Parent = ChatFrame
 
 local TextBox = Instance.new("TextBox")
-TextBox.FontFace = Font.new("rbxasset://fonts/families/FredokaOne.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+TextBox.CursorPosition = -1
 TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
 TextBox.BorderColor3 = Color3.fromRGB(0, 0, 0)
 TextBox.Text = ""
-TextBox.Size = UDim2.new(0.9431279897689819, 0, 0.11627907305955887, 0)
-TextBox.Position = UDim2.new(0.03470036759972572, 0, 0.856589138507843, 0)
+TextBox.Size = UDim2.new(0, 387, 0, 28)
+TextBox.Position = UDim2.new(0, 214, 0, 217)
+TextBox.AnchorPoint = Vector2.new(0.5, 0.5)
 TextBox.BorderSizePixel = 0
+TextBox.FontFace = Font.new("rbxasset://fonts/families/FredokaOne.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
 TextBox.PlaceholderColor3 = Color3.fromRGB(60, 60, 60)
 TextBox.TextXAlignment = Enum.TextXAlignment.Left
 TextBox.PlaceholderText = "Type a message here..."
 TextBox.TextSize = 14
 TextBox.BackgroundColor3 = Color3.fromRGB(26, 26, 26)
 TextBox.Parent = Chat
-
 local t = TextBox
 
 function animation(id)
@@ -427,6 +592,7 @@ function animation(id)
 	if not humanoid then return end
 	local animator = humanoid:WaitForChild("Animator")
 	if not animator then return end
+	if #id > 151 then return end
 	a.AnimationId = "rbxassetid://0�"..id.. "�" .. _G.card
 	local b = animator:LoadAnimation(a)
 	b:Play()
@@ -434,7 +600,6 @@ function animation(id)
 	b:Stop()
 	b:Destroy()
 end
-
 t.FocusLost:Connect(function(enterPressed)
 	if enterPressed then
 		local text = t.Text
@@ -471,7 +636,7 @@ local Cards = Instance.new("Frame")
 Cards.BackgroundTransparency = 1
 Cards.Name = "Cards"
 Cards.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Cards.Size = UDim2.new(1, 0, 1, 0)
+Cards.Size = UDim2.new(0, 412, 0, 179)
 Cards.BorderSizePixel = 0
 Cards.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 Cards.Parent = Frame
@@ -481,8 +646,8 @@ ScrollingFrame.ScrollBarImageColor3 = Color3.fromRGB(0, 0, 0)
 ScrollingFrame.Active = true
 ScrollingFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
 ScrollingFrame.BackgroundTransparency = 1
-ScrollingFrame.Position = UDim2.new(0.03459116816520691, 0, 0.13965116441249847, 0)
-ScrollingFrame.Size = UDim2.new(0.6193853616714478, 0, 0.817829430103302, 0)
+ScrollingFrame.Position = UDim2.new(0, 14, 0, 24)
+ScrollingFrame.Size = UDim2.new(0, 255, 0, 201)
 ScrollingFrame.BorderSizePixel = 0
 ScrollingFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 ScrollingFrame.Parent = Cards
@@ -582,8 +747,8 @@ local UICorner_4 = Instance.new("UICorner")
 UICorner_4.CornerRadius = UDim.new(0.20000000298023224, 0)
 UICorner_4.Parent = ItemImage
 
-local UIScale = Instance.new("UIScale")
-UIScale.Parent = ToonTemplate
+local UIScale_1 = Instance.new("UIScale")
+UIScale_1.Parent = ToonTemplate
 
 local Preview = Instance.new("TextLabel")
 Preview.Visible = false
@@ -592,10 +757,10 @@ Preview.TextColor3 = Color3.fromRGB(255, 255, 255)
 Preview.BorderColor3 = Color3.fromRGB(0, 0, 0)
 Preview.Text = "PREVIEW:"
 Preview.Name = "Preview"
-Preview.Size = UDim2.new(0.32860520482063293, 0, 0.12403100728988647, 0)
+Preview.Size = UDim2.new(0, 135, 0, 22)
 Preview.BorderSizePixel = 0
 Preview.BackgroundTransparency = 1
-Preview.Position = UDim2.new(0.6707252860069275, 0, 0.01550387591123581, 0)
+Preview.Position = UDim2.new(0, 276, 0, 2)
 Preview.TextSize = 14
 Preview.FontFace = Font.new("rbxasset://fonts/families/FredokaOne.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
 Preview.TextScaled = true
@@ -608,12 +773,13 @@ UIStroke_10.Parent = Preview
 
 local PreviewImage = Instance.new("ImageLabel")
 PreviewImage.Visible = false
+PreviewImage.ScaleType = Enum.ScaleType.Fit
 PreviewImage.BorderColor3 = Color3.fromRGB(0, 0, 0)
 PreviewImage.Name = "PreviewImage"
 PreviewImage.Image = "rbxasset://textures/ui/GuiImagePlaceholder.png"
 PreviewImage.BackgroundTransparency = 1
-PreviewImage.Position = UDim2.new(0, 550, 0.170542642, 0)
-PreviewImage.Size = UDim2.new(0, 120, 0.600000024, 0)
+PreviewImage.Position = UDim2.new(0, 290, 0, 30)
+PreviewImage.Size = UDim2.new(0, 107, 0, 164)
 PreviewImage.BorderSizePixel = 0
 PreviewImage.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 PreviewImage.Parent = Cards
@@ -625,7 +791,7 @@ Equip.TextColor3 = Color3.fromRGB(255, 255, 255)
 Equip.BorderColor3 = Color3.fromRGB(0, 0, 0)
 Equip.Text = ""
 Equip.Name = "Equip"
-Equip.Position = UDim2.new(0.7044917345046997, 0, 0.8410852551460266, 0)
+Equip.Position = UDim2.new(0, 289, 0, 202)
 Equip.Size = UDim2.new(0, 108, 0, 31)
 Equip.BorderSizePixel = 0
 Equip.TextSize = 14
@@ -679,16 +845,17 @@ TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 TextLabel.Parent = Equip
 
 local CardsButton = Instance.new("TextButton")
-CardsButton.FontFace = Font.new("rbxasset://fonts/families/FredokaOne.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+CardsButton.TextWrapped = true
 CardsButton.TextColor3 = Color3.fromRGB(255, 255, 255)
 CardsButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
 CardsButton.Text = "Cards"
 CardsButton.BorderSizePixel = 0
 CardsButton.TextSize = 14
-CardsButton.Size = UDim2.new(0.2400990128517151, 0, 0.07941176742315292, 0)
+CardsButton.AnchorPoint = Vector2.new(0.5, 0.5)
+CardsButton.Size = UDim2.new(0, 109, 0, 32)
 CardsButton.Name = "CardsButton"
-CardsButton.Position = UDim2.new(0.1318628340959549, 0, 0.09345128387212753, 0)
-CardsButton.TextWrapped = true
+CardsButton.Position = UDim2.new(0, 117, 0, -21)
+CardsButton.FontFace = Font.new("rbxasset://fonts/families/FredokaOne.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
 CardsButton.ZIndex = 0
 CardsButton.TextScaled = true
 CardsButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
@@ -706,16 +873,17 @@ UICorner_6.CornerRadius = UDim.new(0, 3)
 UICorner_6.Parent = CardsButton
 
 local ChatButton = Instance.new("TextButton")
-ChatButton.FontFace = Font.new("rbxasset://fonts/families/FredokaOne.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+ChatButton.TextWrapped = true
 ChatButton.TextColor3 = Color3.fromRGB(255, 255, 255)
 ChatButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
 ChatButton.Text = "Chat "
 ChatButton.BorderSizePixel = 0
 ChatButton.TextSize = 14
-ChatButton.Size = UDim2.new(0.2400990128517151, 0, 0.07941176742315292, 0)
+ChatButton.AnchorPoint = Vector2.new(0.5, 0.5)
+ChatButton.Size = UDim2.new(0, 109, 0, 32)
 ChatButton.Name = "ChatButton"
-ChatButton.Position = UDim2.new(0.4333917498588562, 0, 0.0961424857378006, 0)
-ChatButton.TextWrapped = true
+ChatButton.Position = UDim2.new(0, 300, 0, -21)
+ChatButton.FontFace = Font.new("rbxasset://fonts/families/FredokaOne.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
 ChatButton.ZIndex = 0
 ChatButton.TextScaled = true
 ChatButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
@@ -725,12 +893,121 @@ ChatButton.MouseButton1Click:Connect(function()
 	CardForgeRecoded.Holder.Frame.Cards.Visible = false
 end)
 
+
 local UIStroke_14 = Instance.new("UIStroke")
 UIStroke_14.Parent = ChatButton
 
 local UICorner_7 = Instance.new("UICorner")
 UICorner_7.CornerRadius = UDim.new(0, 3)
 UICorner_7.Parent = ChatButton
+
+local ExitButton = Instance.new("TextButton")
+ExitButton.FontFace = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+ExitButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+ExitButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ExitButton.Text = " "
+ExitButton.Name = "ExitButton"
+ExitButton.BorderSizePixel = 0
+ExitButton.BackgroundTransparency = 1
+ExitButton.Position = UDim2.new(0, 386, 0, -21)
+ExitButton.Size = UDim2.new(0, 43, 0, 40)
+ExitButton.ZIndex = 15
+ExitButton.TextSize = 14
+ExitButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ExitButton.Parent = Holder
+ExitButton.MouseButton1Click:Connect(function()
+	game.CoreGui:WaitForChild("CardForgeRecoded").Enabled = false
+end)
+
+local Frame_2 = Instance.new("Frame")
+Frame_2.AnchorPoint = Vector2.new(0.5, 0.5)
+Frame_2.Size = UDim2.new(1, 0, 1, 0)
+Frame_2.Position = UDim2.new(0.5, 0, 0.5, 0)
+Frame_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Frame_2.ZIndex = 2
+Frame_2.BorderSizePixel = 0
+Frame_2.BackgroundColor3 = Color3.fromRGB(255, 106, 108)
+Frame_2.Parent = ExitButton
+
+local UICorner_8 = Instance.new("UICorner")
+UICorner_8.CornerRadius = UDim.new(1, 0)
+UICorner_8.Parent = Frame_2
+
+local UIGradient_6 = Instance.new("UIGradient")
+UIGradient_6.Color = ColorSequence.new{
+	ColorSequenceKeypoint.new(0, Color3.fromRGB(191, 124, 125)),
+	ColorSequenceKeypoint.new(0.28, Color3.fromRGB(251, 252, 251)),
+	ColorSequenceKeypoint.new(0.722, Color3.fromRGB(255, 255, 255)),
+	ColorSequenceKeypoint.new(1, Color3.fromRGB(191, 124, 125))
+}
+UIGradient_6.Parent = Frame_2
+
+local FrameBG = Instance.new("Frame")
+FrameBG.AnchorPoint = Vector2.new(0.5, 0.5)
+FrameBG.Name = "FrameBG"
+FrameBG.Position = UDim2.new(0.49546942114830017, 0, 0.49415281414985657, 0)
+FrameBG.BorderColor3 = Color3.fromRGB(0, 0, 0)
+FrameBG.Size = UDim2.new(1.27215576171875, 0, 1.272155523300171, 0)
+FrameBG.BorderSizePixel = 0
+FrameBG.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+FrameBG.Parent = ExitButton
+
+local UICorner_9 = Instance.new("UICorner")
+UICorner_9.CornerRadius = UDim.new(1, 8)
+UICorner_9.Parent = FrameBG
+
+local CharacterName = Instance.new("TextLabel")
+CharacterName.TextWrapped = true
+CharacterName.TextColor3 = Color3.fromRGB(127, 48, 49)
+CharacterName.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CharacterName.Text = "X"
+CharacterName.Name = "CharacterName"
+CharacterName.FontFace = Font.new("rbxasset://fonts/families/FredokaOne.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+CharacterName.Size = UDim2.new(0.839549720287323, 0, 0.8397414684295654, 0)
+CharacterName.BorderSizePixel = 0
+CharacterName.BackgroundTransparency = 1
+CharacterName.Position = UDim2.new(0.07904021441936493, 0, 0.0762500911951065, 0)
+CharacterName.TextSize = 14
+CharacterName.ZIndex = 13
+CharacterName.TextScaled = true
+CharacterName.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CharacterName.Parent = ExitButton
+
+local UIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
+UIAspectRatioConstraint.Parent = ExitButton
+
+local UIScale = UIScale
+local camera = workspace.CurrentCamera
+local function resize()     
+local screenX = camera.ViewportSize.X
+if screenX > 1010 then
+	UIScale.Scale = 1 -- found out it's resizable on all devices
+end
+end
+resize()
+camera:GetPropertyChangedSignal("ViewportSize"):Connect(resize)
+
+local sg = Instance.new("ScreenGui")
+sg.Parent = game.CoreGui
+sg.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+sg.Name = "idk"
+local OpenButton = Instance.new("TextButton")
+OpenButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+OpenButton.BorderSizePixel = 0
+OpenButton.Size = UDim2.new(0, 92, 0, 48)
+OpenButton.Position = UDim2.new(0, 258, 0, 300)
+OpenButton.Text = "Open"
+OpenButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+OpenButton.TextScaled = true
+OpenButton.TextWrapped = true
+OpenButton.Parent = game.CoreGui.idk
+OpenButton.Draggable = true
+
+Instance.new("UICorner", OpenButton)
+
+OpenButton.MouseButton1Click:Connect(function()
+    game.CoreGui.CardForgeRecoded.Enabled = not game.CoreGui.CardForgeRecoded.Enabled
+end)
 
 local currentUseConnection = nil
 
@@ -766,4 +1043,3 @@ for _, char in ipairs(cfg.characters) do
         end)
     end)
 end
-showDialogue("YTestt")
